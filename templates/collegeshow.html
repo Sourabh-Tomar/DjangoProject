@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+    crossorigin="anonymous"
+    />
+
+{% load static %}
+
+    <link rel="stylesheet" href="{% static 'collage/style.css'%}">
+</head>
+<body>
+    {% for col in coldata %}
+    <div class="card" style="width: 18rem">
+    <img src="/media/{{col.img}}" class="card-img-top" alt="{{col.Firstname}}" />
+        <div class="card-body">
+        <h5 class="card-title">{{col.Firstname}} {{col.Lastname}}</h5>
+        <h6 class="card-title">Email ID: {{col.email}}</h6>
+        <h6 class="card-title">Mobile Number: {{col.mob}}</h6>
+        <h6 class="card-title">Adress: {{col.add}}, {{col.city}}</h6>
+        <a href="#" style="text-align:center" class="btn-primary">Click Here For Login</a>
+        </div>
+    </div>
+    {% endfor %}
+</body>
+</html>
